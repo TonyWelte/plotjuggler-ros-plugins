@@ -454,7 +454,7 @@ void TopicPublisherROS::play(double current_time)
         if (_publish_clock)
         {
           rosgraph_msgs::Clock clock;
-          clock.clock = msg_instance.getTime();
+          clock.clock = ros::Time(consecutive_msg.at(index).x);
           _clock_publisher.publish(clock);
         }
       }
